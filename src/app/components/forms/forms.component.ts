@@ -22,6 +22,6 @@ export class FormsComponent implements OnInit {
   onSubmit(){
     console.log(this.myform.value)
      this.myform.reset()
-     
+
   }
 }
