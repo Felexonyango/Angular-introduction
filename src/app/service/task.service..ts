@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Task } from '../model/Tasks'
 import { Observable } from 'rxjs';
 
@@ -10,9 +10,13 @@ import { Observable } from 'rxjs';
 })
 export class TaskService {
 
-private url="http://localhost:5000/task"
+private url="http://localhost:5000/task";
+
+
 
   constructor(private http:HttpClient){}
+
+
 
   getTasks():Observable<Task[]>{
 
@@ -20,5 +24,16 @@ private url="http://localhost:5000/task"
       
 
   }
+  
+  deleteTask(task: Task): Observable<Task> {
+    const url = `${this.url}/${task.id}`;
+    return this.http.delete<Task>(url);
+  }
+  addTask(task:Task):Observable<Task>{
+    return this.http.post<Task>(this.url,task, {headers: new HttpHeaders({
+      'content-type':'application/json'
+    })})
+  }
+
 }
 

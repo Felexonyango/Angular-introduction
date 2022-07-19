@@ -9,6 +9,8 @@ import { CommonModule } from '@angular/common';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { RouterModule, Routes } from '@angular/router';
 import { TaskItemComponent } from './components/task-item/task-item.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AddTaskComponent } from './components/add-task/add-task.component';
 
 const routes: Routes = [
   {path:'todos',   component:TodosComponent},
@@ -23,9 +25,8 @@ const routes: Routes = [
     TodosComponent,
     FormsComponent,
     TasksComponent,
-    TaskItemComponent
-   
-        
+    TaskItemComponent,
+    AddTaskComponent 
   ],
      
   imports: [
@@ -35,6 +36,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     HttpClientModule,
     CommonModule,
+    FontAwesomeModule
 
   ],
   providers: [],
