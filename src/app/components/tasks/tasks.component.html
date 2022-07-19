@@ -1,0 +1,15 @@
+
+<!-- <div *ngFor="let task of tasks" >
+    
+    <p> {{task.name}}</p>
+    <p>{{task.description}}</p>
+
+</div> -->
+
+<app-task-item *ngFor="let task of tasks"[task]="task">
+
+</app-task-item>
+
+
+
+
